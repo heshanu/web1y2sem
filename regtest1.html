@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <title>Regular Expression</title>
+    <script
+      type="text/javascript"
+      src="../code.jquery.com_jquery-3.7.0.min.js"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $(".dis2").hide();
+        $(".dis3").hide();
+        $(".dis4").hide();
+        $(".dis5").hide();
+        $(".dis6").hide();
+        $(".dis7").hide();
+
+        $("#name").keyup(function () {
+          y = $("#name").val();
+
+          // regular expression
+          //   reg = /^[a-z][a-z]{0,5}$/i;
+          reg = /^[a-z][0-9]+(AB)$/i;
+
+          if (reg.test(y)) {
+            $(".dis2").show();
+            $(".dis3").hide();
+          } else {
+            $(".dis2").hide();
+            $(".dis3").show();
+          }
+        });
+
+        $("#email").keyup(function () {
+          z = $("#email").val();
+
+          regE = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+.edu$/;
+
+          if (regE.test(z)) {
+            $(".dis4").show();
+            $(".dis5").hide();
+          } else {
+            $(".dis4").hide();
+            $(".dis5").show();
+          }
+        });
+
+        $("#url").keyup(function () {
+          z = $("#url").val();
+
+          regE = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+.edu$/;
+
+          if (regE.test(z)) {
+            $(".dis6").show();
+            $(".dis7").hide();
+          } else {
+            $(".dis6").hide();
+            $(".dis7").show();
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <label for="name">Enter Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter Name"
+        autocomplete="off"
+      />
+      <span class="dis2" style="color: green">Your name is good.</span>
+      <span class="dis3" style="color: red"
+        >The field doesn't represent a name.</span
+      >
+    </div>
+    <br />
+    <div>
+      <label for="email">Enter Email:</label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        placeholder="Enter email address"
+        autocomplete="off"
+      />
+      <span class="dis4" style="color: green"
+        >Your entered email is correct.</span
+      >
+      <span class="dis5" style="color: red"
+        >You entered email is not correct.</span
+      >
+    </div>
+    <br>
+    <div>
+      <label for="url">Enter url:</label>
+      <input
+        type="text"
+        id="url"
+        name="url"
+        placeholder="Enter url"
+        autocomplete="off"
+      />
+      <span class="dis6" style="color: green"
+        >Your entered url is correct.</span
+      >
+      <span class="dis7" style="color: red"
+        >You entered url is not correct.</span
+      >
+    </div>
+  </body>
+</html>

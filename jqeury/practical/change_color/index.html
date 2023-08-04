@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- <script src="../../code.jquery.com_jquery-3.7.0.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("p#my1").toggleClass("changeCol");
+                $("p.my1").toggle(1000);
+            } )
+        })
+    </script>
+</head>
+<body>
+    <h2 class="my1">This is a heading</h2>
+    <p id="my1">this is paragraph to change color</p>
+    <p class="my1">this is another paragraph</p>
+    <p class="my1">this is 3rd paragraph</p>
+    <button>Click me</button>
+</body>
+</html>

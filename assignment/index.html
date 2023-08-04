@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Form Handling</title>
+
+        <style>
+            body {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            form {
+                width: 340px;
+                border: 1px solid black;
+                padding: 10px;
+            }
+
+            div {
+                width: 100%;
+                margin-bottom: 5px;
+                gap: 5px;
+            }
+
+            label {
+                width: 100px;
+                display: inline-flex;
+            }
+
+            
+
+           
+        </style>
+    </head>
+    <body>
+        <form action="createfile.php" method="get">
+                <div>
+                    <label>Name :</label>
+                    <input type="text" name="name">
+                </div>
+
+                <div>
+                    <label>Filename :</label>
+                    <input type="text" name="filename">
+                </div>
+
+                <div>
+                    <label>Message :</label>
+                    <textarea name="message"></textarea>
+                </div>
+
+                <div>
+                    <label>&nbsp;</label>
+                    <button type="submit" name="submit">Create My Massage</button>
+                </div>
+        </form>
+    </body>
+</html>

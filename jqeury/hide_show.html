@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./code.jquery.com_jquery-3.7.0.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            val =0;
+            $('button').click(function(){
+                if(val === 0){
+                    $('.p1').hide();
+                    $('.p2').show();
+                    val =1;
+                    $('button').text("Now 1");
+                } else {
+                    $('.p1').show();
+                    $('.p2').hide();
+                    val =0;
+                    $('button').text("Now 0");
+                }
+               
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>this is a heading</h1>
+
+    <p class="p1">this is a paragraph</p>
+
+    <p class="p2">this is another paragraph</p>
+
+    <button>Click me</button>
+</body>
+</html>

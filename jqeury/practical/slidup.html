@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.flip').click(function() {
+                $(".panel").slideToggle("slow");
+            });
+        });
+
+    </script>
+
+    <style>
+        div,panel,p,flip {
+            margin: 0;
+            padding: 5px;
+            text-align: center;
+            background: #e5eecc;
+            border: solid 1px #c3c3c3;
+        }
+
+        div.panel {
+            height: 120px;
+        }
+
+        .flip {
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="panel">
+        <p>becuase time is valueble, we delivery quick and easy learning.</p>
+        <p> at w3schools, you can study everything you need to learn, in an accessible and handy format</p>
+    </div>  
+   <div class="flip">Hide Panel</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function loadDoc(){
+            var comobj = new XMLHttpRequest();
+            comobj.onreadystatechange = function(){
+                if (comobj.readyState == 4 && this.status == 200){
+                    document.getElementById("show").innerHTML = this.responseText;
+                      console.log(this.responseText);
+                }
+            }
+             comobj.open("GET", "D:/uovt/MMW21B222/jqeury/ajax/ajaxIntro.txt", true);
+            // comobj.open("GET", "http://192.168.10.19/SOF-21-B1-01/AJAX/AJAXintro-1.txt", true);
+
+            comobj.send();
+        }
+    </script>
+</head>
+<body>
+    <h2>this is the start of the document</h2>
+    <div id="show">let's see the greeting...</div>
+    <h2>this is after greeting</h2>
+    <button type="button" onclick="loadDoc()" >change the content</button>
+</body>
+</html>

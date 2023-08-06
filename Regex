@@ -1,0 +1,32 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<script> 
+    $(document).ready(function(){
+        
+        const namePattern = /^[a-z\s]+$/;
+        const emailPattern = /^[a-z0-9]+@[a-z]+\.(com|lk|edu)$/;
+        const contactPattern = /^(071|077|070|076|074)[0-9]{7,7}$/;
+        const urlPattern = /^(http|https):\/\/[a-z]+\.(com|lk|org)$/;
+
+        $("#inputName").focusout(function(){
+           var inputName = $("#inputName").val();
+
+           if(pat.test(inputName)){
+                $("#validation").html("Valid")
+           }
+           else{
+                $("#validation").html("Invalid")
+           }
+        })
+    });
+</script>
+
+
+</head>
+<body>
+    <input id="inputName" type="text" placeholder="name"/>
+    <p id="validation"></p>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Assignment 2</title>
+	<script type="text/javascript" src="jq/jquery-3.7.0.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			$("#di1").hide();
+			$("#di2").hide();
+			$("#di3").hide();
+			$("#di4").hide();
+			
+				const userPattern = /^(MMW|SOF|NET|mmw|net|sof)[0-9]{2,2}(B1|B2|b1|b2)[0-9]{2,2}$/;
+				
+
+				$("#uname").focusout(function(){
+
+		           	var inputName = $("#uname").val();
+
+		           	if(userPattern.test(inputName)){
+
+		                $("#di1").show();
+						$("#di2").hide();
+		           	}
+		           	else{
+		               $("#di1").hide();
+						$("#di2").show();
+	           		}
+        		})
+
+
+				const pwPattern = /^[a-zA-Z0-9]{8,}$/;
+
+        		$("#pw").focusout(function(){
+
+		           	var inputPW = $("#pw").val();
+
+		           	if(pwPattern.test(inputPW)){
+
+		                $("#di3").show();
+						$("#di4").hide();
+		           	}
+		           	else{
+		                $("#di3").hide();
+						$("#di4").show();
+	           		}
+        		})
+
+		});
+
+	</script>
+
+</head>
+
+<body>	
+
+	<form>
+		<label>Username</label>
+		<input type="text" id="uname" name="uname">
+
+		<label id="di1"> <font color="green" >Username Accepted</font></label>
+		<label id="di2"><font color="red" >Username Not Accepted</font></label>
+
+		<br/>
+		<label>Password</label>
+		<input type="password" id="pw" name="pw">
+
+		<label id="di3"> <font color="green" >Password Accepted</font></label>
+		<label id="di4"><font color="red" >Password Not Accepted</font></label>
+	</form>
+	
+
+
+
+</body>
+</html>

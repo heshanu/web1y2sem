@@ -1,0 +1,607 @@
+01.<?php
+    // square pattern
+    $size = 5;
+    for($i = 0; $i < $size; $i++) {
+        // print column
+        for($j = 0; $j < $size; $j++) {
+          // print row
+          echo "*";
+        }
+        // change line
+        echo "<br>";
+    }
+*****
+*****
+*****
+*****
+*****
+------------------------------------------------------
+02.<?php
+    // left triangle pattern
+    $size = 5;
+    for($i = 0; $i < $size; $i++) {
+        // print column
+        for($j = 0; $j <= $i; $j++) {
+            echo "*";
+        }
+        echo "<br>";
+    }
+?>
+*
+**
+***
+****
+*****
+
+------------------------------
+03.<?php
+    // right triangle pattern
+    $size = 5;
+    for($i = 0; $i < $size; $i++) {
+        // print spaces
+        for($j = 1; $j < $size - $i; $j++) {
+            echo "&nbsp;&nbsp;";
+        }
+        // print stars
+        for($k = 0; $k <= $i; $k++) {
+            echo "*";
+        }
+        echo "<br>";
+    }
+    *
+   **
+  ***
+ ****
+*****
+----------------------------------
+<?php
+    // downward triangle pattern
+    $size = 5;
+    for($i = 0; $i < $size; $i++) {
+        // print stars
+        for($j = 0; $j < $size - $i; $j++) {
+            echo "*";
+        }
+        echo "<br>";
+    }
+?>
+*****
+****
+***
+**
+*
+------------------------------------
+<?php
+    // pyramid star pattern
+    $size = 5;
+    for($i = 0; $i < $size; $i++) {
+        // print spaces
+        for($j = 0; $j < $size - $i - 1; $j++) {
+            echo "&nbsp;&nbsp;";
+        }
+        // print stars
+        for($k = 0; $k < 2 * $i + 1; $k++) {
+            echo "*";
+        }
+        echo "<br>";
+    }
+?>
+    *
+   ***
+  *****
+ *******
+*********
+-------------------------------------
+<?php
+    // pyramid star pattern
+    $size = 5;
+    for($i = 0; $i < $size; $i++) {
+        // print spaces
+        for($j = 0; $j < $i; $j++) {
+            echo "&nbsp;&nbsp;";
+        }
+        // print stars
+        for($k = 0; $k < 2 * ($size - $i) - 1; $k++) {
+            echo "*";
+        }
+        echo "<br>";
+    }
+?>
+
+*********
+ *******
+  *****
+   ***
+    *
+-----------------------------------
+<?php
+    $size = 5;
+    
+    // upside pyramid
+    for ($i = 1; $i <= $size; $i++) {
+        // printing spaces
+        for ($j = $size; $j > $i; $j--) {
+            echo "&nbsp;&nbsp;";
+        }
+        // printing star
+        for ($k = 0; $k < $i * 2 - 1; $k++) {
+            echo "*";
+        }
+        echo "<br>";
+    }
+    // downside pyramid
+    for ($i = 1; $i <= $size - 1; $i++) {
+        // printing spaces
+        for ($j = 0; $j < $i; $j++) {
+            echo "&nbsp;&nbsp;";
+        }
+        // printing star
+        for ($k = ($size - $i) * 2 - 1; $k > 0; $k--) {
+            echo "*";
+        }
+        echo "<br>";
+    }
+?>
+
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+-------------------------------------
+
+<?php
+    $size = 5;
+    
+    // reversed pyramid star pattern
+    for ($i = 0; $i < $size; $i++) {
+        // printing spaces
+        for ($j = 0; $j < $i; $j++) {
+            echo "&nbsp;&nbsp;";
+        }
+        // printing star
+        for ($k = 0; $k < ($size - $i) * 2 - 1; $k++) {
+            echo "*";
+        }
+        echo "<br>";
+    }
+    // pyramid star pattern
+    for ($i = 2; $i <= $size; $i++) {
+        // printing spaces
+        for ($j = $size; $j > $i; $j--) {
+            echo "&nbsp;&nbsp;";
+        }
+        // printing star
+        for ($k = 0; $k < $i * 2 - 1; $k++) {
+            echo "*";
+        }
+        echo "<br>";
+    }
+?>
+
+*********
+ *******
+  *****
+   ***
+    *
+   ***
+  *****
+ *******
+*********
+
+----------------------------------------------
+<?php
+    $size = 5;
+    
+    for ($i = 1; $i <= $size; $i++) {
+        for ($j = 0; $j < $i; $j++) {
+            echo "*";
+        }
+        echo "<br>";
+    }
+    for ($i = 1; $i <= $size - 1; $i++) {
+        for ($j = 0; $j < $size - $i; $j++) {
+            echo "*";
+        }
+        echo "<br>";
+    }
+?>
+
+*
+**
+***
+****
+*****
+****
+***
+**
+*
+-----------------------------------
+
+<?php  
+$k=1;  
+for($i=0;$i<4;$i++){  
+for($j=0;$j<=$i;$j++){  
+echo $k." ";  
+$k++;  
+}  
+echo "<br>";  
+}  
+?>  
+
+1
+23
+456
+78910
+-------------------------------------------------------
+Gread Check 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Checker</title>
+</head>
+<body>
+    <h2>Student Grade Checker</h2>
+    <form method="post">
+        Enter marks: <input type="text" name="marks">
+        <input type="submit" name="submit" value="Check Grade">
+    </form>
+
+    <?php
+    if (isset($_POST['submit'])) {
+        $marks = $_POST['marks'];
+        
+        if ($marks >= 60) {
+            $grade = "Grade B";
+        } elseif ($marks >= 45 && $marks <= 59) {
+            $grade = "Grade C";
+        } elseif ($marks >= 30 && $marks <= 44) {
+            $grade = "Grade D";
+        } else {
+            $grade = "Fail";
+        }
+
+        echo "Result: " . $grade;
+    }
+    ?>
+</body>
+</html>
+-----------------------------------------------------------
+form
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Information</title>
+</head>
+<body>
+<form method="post" action="">
+<table width="463" height="266" border="1">
+  <tr>
+    <td height="23" colspan="2">Student Infromation</td>
+    </tr>
+  <tr>
+    <td width="124">Name :</td>
+    <td width="298"><label for="textfield"></label>
+      <input type="text" name="name" size="40"/></td>
+  </tr>
+  <tr>
+    <td>Age :</td>
+    <td><select name="age">
+        <option>20-22</option>
+        <option>23-25</option>
+        <option>26-28</option>
+      </select></td>
+  </tr>
+  <tr>
+    <td>Gender :</td>
+    <td>
+	<input type="radio" name="gender" value="Male">Male
+	<input type="radio" name="gender" value="Female">Female
+    </td>
+  </tr>
+  <tr>
+    <td height="89">Comment :</td>
+    <td><label for="textarea"></label>
+      <textarea name="comment" id="textarea" cols="45" rows="5"></textarea></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="button" value="Submit" /> <input type="submit" name="button2" value="Reset" /></td>
+  </tr>
+</table>
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	$name = $_POST["name"];
+	$age = $_POST["age"];
+	$gender = $_POST["gender"];
+	$comment = $_POST["comment"];
+	
+	echo "<h2>Student Details</h2>";
+	echo "Name : $name <br>";
+	echo "Age : $age <br>";
+	echo "Gender : $gender <br>";
+	echo "Comment : $comment <br>";
+}
+?>
+</body>
+</html>
+-------------------------------
+Junior Assignemt 
+Form 
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Information</title>
+</head>
+<body>
+<form method="post" action="">
+<table width="463" height="266" border="1">
+  <tr>
+    <td height="23" colspan="2">Student Infromation</td>
+    </tr>
+  <tr>
+    <td width="124">Student Name :</td>
+    <td width="298"><label for="textfield"></label>
+      <input type="text" name="name" size="40"/></td>
+  </tr>
+  <tr>
+  <tr>
+  <td>Email :</td>
+    <td><input type ="text" class="email" name= "" placeholder="enter your email">
+</select> 
+</td>
+  <tr>
+    <td>Gender :</td>
+    <td>
+	<input type="radio" name="gender" value="Male">Male
+	<input type="radio" name="gender" value="Female">Female
+    </td>
+  </tr>
+
+    <td>&nbsp;</td>
+    <td><input type="submit" name="button" value="Submit" /> <input type="submit" name="button2" value="Reset" /></td>
+  </tr>
+</table>
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	$name = $_POST["name"];
+	$email = $_POST["email"];
+	$gender = $_POST["gender"];
+	
+	
+	echo "<h2>Student Details</h2>";
+	echo "Name : $name <br>";
+	echo "Email : $email <br>";
+	echo "Gender : $gender <br>";
+	
+}
+?>
+</body>
+</html
+
+------------------------------
+No Table 
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>php Table</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<?php 
+echo "<table border ='1' style='border-collapse:collapse;' cellpadding ='2'>";
+for ($i=1; $i<=5; $i++)
+{
+    echo "<tr>";
+    for ($x=1; $x<=5; $x++)
+    {
+        echo "<td>".$i*$x."</td>";
+    }
+    echo"</tr>";
+}
+echo"</table>";
+
+
+?>
+
+1 2 3 4  5
+2 4 6 8 10
+3 6 9 12 15
+4 8 12 16 20
+5 10 15 20 25
+------------------------------------
+20/21 no table
+<?php 
+for ($i=1; $i<=4; $i++)
+{
+    $i1 = $i+4;  // 1+4=5
+    $i2=$i1+4; //5+4=9
+    echo "$i"." "."$i1"." "."$i2"."<br>";
+}
+?>
+1 5 9
+2 6 10
+3 7 11
+4 8 12
+---------------------------------
+angular
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <script src="angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+  <h1>Angular Calculator</h1>
+  <form>
+    <label for="input1">Input 1:</label>
+    <input type="number" id="input1" ng-model="input1" required>
+    <br>
+
+    <label for="input2">Input 2:</label>
+    <input type="number" id="input2" ng-model="input2" required>
+    <br>
+
+    <label for="input3">Input 3:</label>
+    <input type="number" id="input3" ng-model="input3" required>
+    <br>
+
+    <button ng-click="calculate()">Calculate</button>
+  </form>
+
+  <p ng-if="result">Output: {{result}}</p>
+
+  <script>
+    var app = angular.module('myApp', []);
+
+    app.controller('myCtrl', function($scope) {
+      $scope.calculate = function() {
+        
+        if ($scope.input1 !== undefined && $scope.input2 !== undefined && $scope.input3 !== undefined) {
+         
+          $scope.result = $scope.input1 * $scope.input2 + $scope.input3;
+        } else {
+         
+          $scope.result = "Invalid input or missing values";
+        }
+      };
+    });
+  </script>
+</body>
+</html>
+
+----------------------------------------------------
+<?php
+// Use a for loop to print multiplication expressions
+for ($i = 1; $i <= 12; $i++) {
+    $result = $i * $i;
+    echo "$i * $i = $result<br>";
+}
+?>
+1 * 1 = 1
+2 * 2 = 4
+3 * 3 = 9
+........
+--------------------
+ajax
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        let number = 0
+
+        function getDate(){
+            const ajax = new XMLHttpRequest();
+            ajax.onreadystatechange=function(){
+                if(this.readyState == 4){
+                    let results = JSON.parse(this.responseText);
+                    results?.forEach((result)=>{
+                        const data = `
+                        <tr>
+                            <td>
+                                ${result.name}
+                            </td>
+                            <td>
+                                ${result.age}
+                            </td>    
+                            <td>
+                                ${result.location}
+                            </td>
+                        </tr>`;
+                        document.getElementById("results").innerHTML += data;
+                    });
+                }
+            }
+            ajax.open("GET","jsonfile.json");
+            ajax.send();
+        }
+
+
+    </script>
+</head>
+<body>
+    <button onclick="getDate()">Get</button>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Location</th>
+        </tr>
+        <tbody id="results">
+
+        </tbody>
+    </table>
+
+</body>
+</html>
+-----------------------------------------
+Multi-table (1 to 100)
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="2">
+        <?php for ($row=1 ; $row<=10; $row++) 
+        {?>
+            <tr>
+                <?php for($col=1; $col<=10; $col++)
+                {
+                    $result=$row*$col;
+                    ?>
+                    <td style="padding:10px; border:solid 2px yellow";><?php echo $result ?> </td>
+                    <?php } ?>
+                </tr>
+                <?php }?>
+    </table>
+</body>
+</html>
+-------------------------------------------
+<?php
+$n = 1; /*Initializing starting number*/
+for ($i = 0; $i < 5; $i++)
+{
+    for ($j = 0; $j <= $i; $j++ )
+    {
+        echo $n." ";
+        $n = $n + 1;
+    }
+    echo "<br/>";
+}
+?>
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        const NameRegEx = /^[a-zA-Z\s]+?$/;
+        const ContactRegEx = /^(071|077|075)[0-9]{7}$/;
+        const EmailRegEx = /^[a-z0-9]+@(gmail|yahoo).(lk|com)$/;
+        const URLRegEx = /^(http|https):\/\/[a-z]+.(com|edu)$/;
+
+        $(document).ready(function(){
+
+            $("#txtName").focusout(function(){
+                let txtName = $("#txtName").val();
+                if(NameRegEx.test(txtName)){
+                    $("#nameValidation").text("Name is valid").css({color:"green"});
+                }else{
+                    $("#nameValidation").text("Name is Invalid").css({color:"red"});
+                }
+            })
+
+
+            $("#txtContact").focusout(function(){
+                let txtContact = $("#txtContact").val();
+                if(ContactRegEx.test(txtContact)){
+                    $("#contactValidation").text("Contact is valid").css({color:"green"});
+                }else{
+                    $("#contactValidation").text("Contact is Invalid").css({color:"red"});
+                }
+            })
+            
+
+            $("#txtEmail").focusout(function(){
+                let txtEmail = $("#txtEmail").val();
+                if(EmailRegEx.test(txtEmail)){
+                    $("#emailValidation").text("Email is valid").css({color:"green"});
+                }else{
+                    $("#emailValidation").text("Email is Invalid").css({color:"red"});
+                }
+            })
+
+            $("#txtUrl").focusout(function(){
+                let txtUrl = $("#txtUrl").val();
+                if(URLRegEx.test(txtUrl)){
+                    $("#urlValidation").text("Email is valid").css({color:"green"});
+                }else{
+                    $("#urlValidation").text("Email is Invalid").css({color:"red"});
+                }
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <label>Name</label>
+    <input type="text" id="txtName"/>
+    <p id="nameValidation"></p>
+
+    <label>Contact Number</label>
+    <input type="text" id="txtContact"/>
+    <p id="contactValidation"></p>
+
+    
+    <label>Email Address</label>
+    <input type="text" id="txtEmail"/>
+    <p id="emailValidation"></p>
+
+
+    <label>URL</label>
+    <input type="text" id="txtUrl"/>
+    <p id="urlValidation"></p>
+</body>
+</html>

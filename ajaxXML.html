@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getData(){
+            const ajax = new XMLHttpRequest(); 
+            ajax.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    //Result
+                    let results = this.responseXML;
+                    let lengthOfXML = results.querySelector("PARENT").querySelectorAll("CHILDREN").length;
+               
+                    for(let x = 0 ; x < lengthOfXML ;x++){
+                        const itemHTML = `
+                            <tr>
+                                <td>
+                                    ${results.querySelector("PARENT").querySelectorAll("CHILDREN")[x].querySelector("NAME").textContent}
+                                </td>
+                                <td>
+                                    ${results.querySelector("PARENT").querySelectorAll("CHILDREN")[x].querySelector("AGE").textContent}
+                                </td>
+                                <td>
+                                    ${results.querySelector("PARENT").querySelectorAll("CHILDREN")[x].querySelector("LOCATION").textContent}
+                                </td>
+                        </tr>`;
+                        document.getElementById("Tbody").innerHTML += itemHTML;
+                    }
+
+
+                }
+            }
+            ajax.open("GET","data.xml");
+            ajax.send();
+        }
+    </script>
+
+</head>
+<body>
+    <button onclick="getData()">Get XML</button>
+    <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Location</th>
+            </tr>
+        <tbody id="Tbody">
+        </tbody>
+    </table>
+</body>
+</html>
